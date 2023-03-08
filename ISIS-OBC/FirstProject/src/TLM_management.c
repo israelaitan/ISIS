@@ -24,6 +24,8 @@
 #include "TLM_management.h"
 
 
+//TODO: binary search
+//TODO: read number of records together instead of one
 FileSystemResult fileRead(char* file_name, char* buffer, int size_of_buffer,
 		time_unix from_time, time_unix to_time, int* read, int element_size)
 {
@@ -41,16 +43,20 @@ FileSystemResult fileRead(char* file_name, char* buffer, int size_of_buffer,
 		memcpy(&curr_time, curr_rec, sizeof(unsigned int));
 		if (curr_time < from_time)
 			continue;
-		else if (curr_time > to_time)
+		else if (curr_time > to_time){
+			free(curr_rec);
 			return FS_NOT_EXIST;
+		}
 		else
 			break;
 	}
 
 	*read = 0;
 	while (curr_time <= to_time){
-		if ((*read + 1) * rec_size > size_of_buffer)
+		if ((*read + 1) * rec_size > size_of_buffer){
+			free(curr_rec);
 			return FS_BUFFER_OVERFLOW;
+		}
 		memcpy(buffer + *read * rec_size, curr_rec, rec_size);
 		*read += 1;
 		if (!f_read(curr_rec, 1, element_size, file))
@@ -60,9 +66,8 @@ FileSystemResult fileRead(char* file_name, char* buffer, int size_of_buffer,
 
 	if (!f_close(file))
 		return FS_FAT_API_FAIL;
-
+	free(curr_rec);
 	return FS_SUCCSESS;
-
 }
 
 FileSystemResult fileWrite(char* file_name, void* element, int size)
