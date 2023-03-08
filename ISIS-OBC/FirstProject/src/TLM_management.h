@@ -44,6 +44,4 @@ FileSystemResult fileRead(char* c_file_name,char* buffer, int size_of_buffer,
 
 FileSystemResult fileWrite(char* file_name, void* element,int size);
 
-FileSystemResult fileRead(char* c_file_name,char* buffer, int size_of_buffer,
-		time_unix from_time, time_unix to_time, int* read, int element_size);
 #endif

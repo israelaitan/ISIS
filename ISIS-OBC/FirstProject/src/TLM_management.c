@@ -21,22 +21,79 @@
 
 #include <string.h>
 #include <stdlib.h>
-
 #include "TLM_management.h"
 
 
-FileSystemResult fileRead(char* c_file_name,char* buffer, int size_of_buffer,
+FileSystemResult fileRead(char* file_name, char* buffer, int size_of_buffer,
 		time_unix from_time, time_unix to_time, int* read, int element_size)
 {
+	if (!file_name || !buffer || size_of_buffer <= 0 || from_time < to_time || !read || element_size <= 0)
+		return FS_FAIL;
 
+	F_FILE *file = f_open(file_name, "r");
+	if (!file)
+		return FS_FAT_API_FAIL;
+
+	unsigned int rec_size = sizeof(unsigned int) + element_size;
+	char* curr_rec = malloc(rec_size);
+	unsigned int curr_time = 0;
+	while (f_read(curr_rec, 1, element_size, file)){
+		memcpy(&curr_time, curr_rec, sizeof(unsigned int));
+		if (curr_time < from_time)
+			continue;
+		else if (curr_time > to_time)
+			return FS_NOT_EXIST;
+		else
+			break;
+	}
+
+	*read = 0;
+	while (curr_time <= to_time){
+		if ((*read + 1) * rec_size > size_of_buffer)
+			return FS_BUFFER_OVERFLOW;
+		memcpy(buffer + *read * rec_size, curr_rec, rec_size);
+		*read += 1;
+		if (!f_read(curr_rec, 1, element_size, file))
+			break;
+		memcpy(&curr_time, curr_rec, sizeof(unsigned int));
+	}
+
+	if (!f_close(file))
+		return FS_FAT_API_FAIL;
 
 	return FS_SUCCSESS;
+
 }
 
-FileSystemResult fileWrite(char* file_name, void* element,int size)
+FileSystemResult fileWrite(char* file_name, void* element, int size)
 {
+	if (!file_name || !element || !size)
+		return FS_FAIL;
+
+	if (strlen(file_name) > MAX_F_FILE_NAME_SIZE)
+		return FS_TOO_LONG_NAME;
+
+	F_FILE *file = f_open(file_name, "a");
+	if (!file)
+		return FS_FAT_API_FAIL;
+
+	unsigned int curr_time = 0;
+	int res = Time_getUnixEpoch(&curr_time);
+	if (res)
+		return FS_FAIL;
+
+	if (!f_write(&curr_time, 1, sizeof(int), file))
+		return FS_FAT_API_FAIL;
+	if (!f_write(element, 1, size, file))
+			return FS_FAT_API_FAIL;
+
+
+	if (!f_close(file))
+		return FS_FAT_API_FAIL;
+
 	return FS_SUCCSESS;
 }
+
 FileSystemResult InitializeFS()
 {
 	
