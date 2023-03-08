@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1678085821809" transient="false" version="3.0">
+<config date="1678191236686" transient="false" version="3.0">
 <site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
 <feature id="org.eclipse.mylyn.wikitext_feature" plugin-identifier="org.eclipse.mylyn.wikitext.core" url="features/org.eclipse.mylyn.wikitext_feature_1.8.2.v20140211-0100/" version="1.8.2.v20140211-0100">
 </feature>
@@ -23,9 +23,9 @@
 </feature>
 <feature id="org.eclipse.linuxtools.cdt.libhover.feature" url="features/org.eclipse.linuxtools.cdt.libhover.feature_1.0.0.201402102340/" version="1.0.0.201402102340">
 </feature>
-<feature id="org.eclipse.cdt.msw" url="features/org.eclipse.cdt.msw_8.3.0.201402142303/" version="8.3.0.201402142303">
-</feature>
 <feature id="org.eclipse.equinox.p2.rcp.feature" url="features/org.eclipse.equinox.p2.rcp.feature_1.2.0.v20140221-1852/" version="1.2.0.v20140221-1852">
+</feature>
+<feature id="org.eclipse.cdt.msw" url="features/org.eclipse.cdt.msw_8.3.0.201402142303/" version="8.3.0.201402142303">
 </feature>
 <feature id="org.eclipse.equinox.p2.user.ui" url="features/org.eclipse.equinox.p2.user.ui_2.2.0.v20140221-1852/" version="2.2.0.v20140221-1852">
 </feature>
@@ -39,9 +39,9 @@
 </feature>
 <feature id="org.eclipse.epp.package.common.feature" url="features/org.eclipse.epp.package.common.feature_2.0.2.20140224-0000/" version="2.0.2.20140224-0000">
 </feature>
-<feature id="org.eclipse.egit" url="features/org.eclipse.egit_3.2.0.201312181205-r/" version="3.2.0.201312181205-r">
-</feature>
 <feature id="org.eclipse.linuxtools.gcov" url="features/org.eclipse.linuxtools.gcov_1.1.0.201402102340/" version="1.1.0.201402102340">
+</feature>
+<feature id="org.eclipse.egit" url="features/org.eclipse.egit_3.2.0.201312181205-r/" version="3.2.0.201312181205-r">
 </feature>
 <feature id="org.eclipse.jgit" url="features/org.eclipse.jgit_3.2.0.201312181205-r/" version="3.2.0.201312181205-r">
 </feature>
@@ -95,23 +95,23 @@
 </feature>
 <feature id="org.eclipse.epp.package.cpp.feature" plugin-identifier="org.eclipse.epp.package.cpp" url="features/org.eclipse.epp.package.cpp.feature_2.0.2.20140224-0000/" version="2.0.2.20140224-0000">
 </feature>
-<feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.4.0.v20140221-1700/" version="1.4.0.v20140221-1700">
-</feature>
 <feature id="org.eclipse.team.svn.revision.graph" url="features/org.eclipse.team.svn.revision.graph_1.1.0.I20130619-1700/" version="1.1.0.I20130619-1700">
+</feature>
+<feature id="org.eclipse.cvs" url="features/org.eclipse.cvs_1.4.0.v20140221-1700/" version="1.4.0.v20140221-1700">
 </feature>
 <feature id="org.eclipse.mylyn.team_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.team_feature_3.9.2.v20140211-0100/" version="3.9.2.v20140211-0100">
 </feature>
-<feature id="org.eclipse.gef" url="features/org.eclipse.gef_3.9.1.201308190730/" version="3.9.1.201308190730">
+<feature id="org.polarion.eclipse.team.svn.connector.svnkit16" url="features/org.polarion.eclipse.team.svn.connector.svnkit16_3.0.5.I20140122-1700/" version="3.0.5.I20140122-1700">
 </feature>
 <feature id="org.eclipse.epp.mpc" plugin-identifier="org.eclipse.epp.mpc.ui" url="features/org.eclipse.epp.mpc_1.2.1.v20140219-1000/" version="1.2.1.v20140219-1000">
 </feature>
-<feature id="org.polarion.eclipse.team.svn.connector.svnkit16" url="features/org.polarion.eclipse.team.svn.connector.svnkit16_3.0.5.I20140122-1700/" version="3.0.5.I20140122-1700">
+<feature id="org.eclipse.gef" url="features/org.eclipse.gef_3.9.1.201308190730/" version="3.9.1.201308190730">
 </feature>
 <feature id="org.eclipse.linuxtools.tmf" url="features/org.eclipse.linuxtools.tmf_2.2.1.201402102340/" version="2.2.1.201402102340">
 </feature>
-<feature id="org.eclipse.cdt.platform" url="features/org.eclipse.cdt.platform_8.3.0.201402142303/" version="8.3.0.201402142303">
-</feature>
 <feature id="org.eclipse.rse.core" url="features/org.eclipse.rse.core_3.4.100.201307171557/" version="3.4.100.201307171557">
+</feature>
+<feature id="org.eclipse.cdt.platform" url="features/org.eclipse.cdt.platform_8.3.0.201402142303/" version="8.3.0.201402142303">
 </feature>
 <feature id="org.eclipse.rse.ftp" plugin-identifier="org.eclipse.rse.services.files.ftp" url="features/org.eclipse.rse.ftp_3.2.0.201305152119/" version="3.2.0.201305152119">
 </feature>
@@ -125,15 +125,15 @@
 </feature>
 <feature id="org.eclipse.mylyn.commons.repositories" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.repositories_1.1.2.v20140211-0100/" version="1.1.2.v20140211-0100">
 </feature>
-<feature id="org.eclipse.linuxtools.changelog.c" url="features/org.eclipse.linuxtools.changelog.c_2.8.0.201402102340/" version="2.8.0.201402102340">
-</feature>
 <feature id="org.eclipse.cdt.mylyn" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.cdt.mylyn_5.5.2.v20140211-0100/" version="5.5.2.v20140211-0100">
+</feature>
+<feature id="org.eclipse.linuxtools.changelog.c" url="features/org.eclipse.linuxtools.changelog.c_2.8.0.201402102340/" version="2.8.0.201402102340">
 </feature>
 <feature id="org.eclipse.e4.rcp" url="features/org.eclipse.e4.rcp_1.2.2.v20140206-1358/" version="1.2.2.v20140206-1358">
 </feature>
-<feature id="org.eclipse.linuxtools.lttng2.kernel" url="features/org.eclipse.linuxtools.lttng2.kernel_2.2.1.201402102340/" version="2.2.1.201402102340">
-</feature>
 <feature id="org.eclipse.mylyn.commons.identity" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.identity_1.1.2.v20140211-0100/" version="1.1.2.v20140211-0100">
+</feature>
+<feature id="org.eclipse.linuxtools.lttng2.kernel" url="features/org.eclipse.linuxtools.lttng2.kernel_2.2.1.201402102340/" version="2.2.1.201402102340">
 </feature>
 <feature id="org.eclipse.rse" url="features/org.eclipse.rse_3.5.0.201309112143/" version="3.5.0.201309112143">
 </feature>
@@ -143,9 +143,9 @@
 </feature>
 <feature id="org.eclipse.linuxtools.ctf" url="features/org.eclipse.linuxtools.ctf_2.2.1.201402102340/" version="2.2.1.201402102340">
 </feature>
-<feature id="org.eclipse.cdt.gnu.debug" url="features/org.eclipse.cdt.gnu.debug_8.3.0.201402142303/" version="8.3.0.201402142303">
-</feature>
 <feature id="org.eclipse.mylyn.context_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.context_feature_3.9.2.v20140211-0100/" version="3.9.2.v20140211-0100">
+</feature>
+<feature id="org.eclipse.cdt.gnu.debug" url="features/org.eclipse.cdt.gnu.debug_8.3.0.201402142303/" version="8.3.0.201402142303">
 </feature>
 </site>
 </config>

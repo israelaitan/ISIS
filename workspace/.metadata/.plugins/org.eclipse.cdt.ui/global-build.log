@@ -1,0 +1,51 @@
+13:58:40 **** Build of configuration Debug for project isis-obc-first-project ****
+make -r -k all 
+Building file: ../src/InitSystem.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=arm926ej-s -O0 -fmessage-length=0 -ffunction-sections -Wall -Wextra  -g -Dsdram -Dat91sam9g20 -DTRACE_LEVEL=5 -DDEBUG=1 -D'BASE_REVISION_NUMBER=' -D'BASE_REVISION_HASH_SHORT=' -D'BASE_REVISION_HASH=' -I"C:\ISIS\ISIS-OBC\FirstProject\src" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/freertos/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/at91/include" -MMD -MP -MF"src/InitSystem.d" -MT"src/InitSystem.d" -c -o "src/InitSystem.o" "../src/InitSystem.c"
+../src/InitSystem.c: In function 'InitSubsystems':
+../src/InitSystem.c:86:2: warning: implicit declaration of function 'InitTrxvu' [-Wimplicit-function-declaration]
+Finished building: ../src/InitSystem.c
+ 
+Building file: ../src/TLM_management.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=arm926ej-s -O0 -fmessage-length=0 -ffunction-sections -Wall -Wextra  -g -Dsdram -Dat91sam9g20 -DTRACE_LEVEL=5 -DDEBUG=1 -D'BASE_REVISION_NUMBER=' -D'BASE_REVISION_HASH_SHORT=' -D'BASE_REVISION_HASH=' -I"C:\ISIS\ISIS-OBC\FirstProject\src" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/freertos/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/at91/include" -MMD -MP -MF"src/TLM_management.d" -MT"src/TLM_management.d" -c -o "src/TLM_management.o" "../src/TLM_management.c"
+In file included from C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include/hal/Timing/Time.h:18:0,
+                 from ../src/TLM_management.c:18:
+C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include/hal/boolean.h:36:0: warning: "TRUE" redefined [enabled by default]
+In file included from C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include/hcc/api_hcc_mem.h:31:0,
+                 from ../src/TLM_management.c:14:
+C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include/hcc/../psp/include/psp_types.h:59:0: note: this is the location of the previous definition
+In file included from C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include/hal/Timing/Time.h:18:0,
+                 from ../src/TLM_management.c:18:
+C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include/hal/boolean.h:37:0: warning: "FALSE" redefined [enabled by default]
+In file included from C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include/hcc/api_hcc_mem.h:31:0,
+                 from ../src/TLM_management.c:14:
+C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include/hcc/../psp/include/psp_types.h:56:0: note: this is the location of the previous definition
+../src/TLM_management.c: In function 'fileRead':
+../src/TLM_management.c:44:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../src/TLM_management.c:46:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../src/TLM_management.c:55:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+../src/TLM_management.c:56:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Finished building: ../src/TLM_management.c
+ 
+Building file: ../src/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=arm926ej-s -O0 -fmessage-length=0 -ffunction-sections -Wall -Wextra  -g -Dsdram -Dat91sam9g20 -DTRACE_LEVEL=5 -DDEBUG=1 -D'BASE_REVISION_NUMBER=' -D'BASE_REVISION_HASH_SHORT=' -D'BASE_REVISION_HASH=' -I"C:\ISIS\ISIS-OBC\FirstProject\src" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/freertos/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/include" -I"C:/ISIS/ISIS-OBC/FirstProject/..//hal/at91/include" -MMD -MP -MF"src/main.d" -MT"src/main.d" -c -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: isis-obc-first-project.elf
+Invoking: Cross ARM C Linker
+arm-none-eabi-gcc -mcpu=arm926ej-s -O0 -fmessage-length=0 -ffunction-sections -Wall -Wextra  -g -T C:/ISIS/ISIS-OBC/FirstProject/..//hal/at91/linker-scripts/sdram.lds -nostartfiles -Xlinker --gc-sections -L"C:/ISIS/ISIS-OBC/FirstProject/..//hal/at91/lib" -L"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hcc/lib" -L"/satellite-subsystems/lib" -L"C:/ISIS/ISIS-OBC/FirstProject/..//hal/freertos/lib" -L"C:/ISIS/ISIS-OBC/FirstProject/..//hal/hal/lib" -Wl,-Map,"isis-obc-first-project.map" -lc -o "isis-obc-first-project.elf"  ./src/InitSystem.o ./src/TLM_management.o ./src/main.o   -lHALD -lHCCD -lFreeRTOSD -lAt91D
+Finished building target: isis-obc-first-project.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O binary "isis-obc-first-project.elf"  "isis-obc-first-project.bin"
+Finished building: isis-obc-first-project.bin
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "isis-obc-first-project.elf"
+   text	   data	    bss	    dec	    hex	filename
+  63404	     12	    404	  63820	   f94c	isis-obc-first-project.elf
+Finished building: isis-obc-first-project.siz
+ 
