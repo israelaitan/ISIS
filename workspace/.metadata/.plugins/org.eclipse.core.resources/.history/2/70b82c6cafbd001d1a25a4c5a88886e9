@@ -17,7 +17,6 @@
 #include <at91/utility/exithandler.h>
 #include <at91/commons.h>
 #include <stdlib.h>
-#include <stddef.h>
 
 #define ENABLE_MAIN_TRACES 1
 #if ENABLE_MAIN_TRACES

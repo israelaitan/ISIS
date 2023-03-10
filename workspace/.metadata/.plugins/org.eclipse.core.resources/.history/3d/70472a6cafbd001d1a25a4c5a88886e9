@@ -4,7 +4,6 @@
 #include <hal/Drivers/I2C.h>
 #include <hal/Drivers/SPI.h>
 #include <hal/Timing/Time.h>
-#include <hal/Storage/FRAM.h>
 #include <at91/utility/exithandler.h>
 #include <string.h>
 //#include "GlobalStandards.h"
@@ -27,8 +26,6 @@
 #define I2c_Timeout 10
 #define I2c_TimeoutTest portMAX_DELAY
 
-#define TIME_ADDRESS_FRAM = 0x4;
-
 Boolean isFirstActivation()
 {
 	return 0;
@@ -41,31 +38,22 @@ void WriteDefaultValuesToFRAM()
 
 int StartFRAM()
 {
-	return FRAM_start();
+	return 0;
 }
 
 int StartI2C()
 {
-	return I2C_start(I2c_SPEED_Hz, I2c_Timeout);
+	return 0;
 }
 
 int StartSPI()
 {
-	return SPI_start(bus1_spi, slave1_spi);
+	return 0;
 }
 
 int StartTIME()
 {
-	Time time = { 0, 0, 0, 1, 1, 1, 0, 0 };
-	int ret = Time_start(&time);
-	//TODO:check errors
-	if (isFirstActivation()){
-		unsigned int epoch_time_from_fram;
-		ret = FRAM_read(&epoch_time_from_fram, TIME_ADDRESS_FRAM, sizeof(unsigned int));
-		if (!ret)
-			ret = Time_setUnixEpoch(epoch_time_from_fram);
-	}
-	return ret;
+	return 0;
 }
 
 int EPS_Init()
